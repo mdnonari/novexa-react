@@ -1,16 +1,17 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
+import React, { Suspense, useEffect, useState } from "react"
 import Lenis from "lenis"
 import { AnimatePresence } from "framer-motion"
 
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
 import BackgroundParticles from "./components/BackgroundParticles"
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Services from "./pages/Services"
-import Contact from "./pages/Contact"
-import Career from "./pages/Career"
+
+const Home = React.lazy(() => import("./pages/Home"))
+const About = React.lazy(() => import("./pages/About"))
+const Services = React.lazy(() => import("./pages/Services"))
+const Contact = React.lazy(() => import("./pages/Contact"))
+const Career = React.lazy(() => import("./pages/Career"))
 
 function App() {
   const [, setLenis] = useState<Lenis | null>(null);
@@ -46,7 +47,11 @@ function App() {
       <div className="dark min-h-screen bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-white">
         <Navigation />
         <BackgroundParticles />
-        <AnimatedRoutes />
+        <Suspense fallback={<div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+        </div>}>
+          <AnimatedRoutes />
+        </Suspense>
         <Footer />
       </div>
     </BrowserRouter>

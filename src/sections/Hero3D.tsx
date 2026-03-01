@@ -50,7 +50,10 @@ function AnimatedShape() {
 export default function Hero3D() {
     return (
         <div className="absolute inset-0 z-0 opacity-80 pointer-events-auto mix-blend-lighten hidden md:block">
-            <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
+            <Canvas
+                camera={{ position: [0, 0, 8], fov: 45 }}
+                dpr={[1, 2]} // Performance: limit pixel ratio on high-DPI screens
+            >
                 <ambientLight intensity={0.2} />
                 <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
                 <directionalLight position={[-10, -10, -5]} intensity={1} color="#4B999B" />

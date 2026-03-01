@@ -1,13 +1,13 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import React, { Suspense } from "react"
-import ServicesPreview from "../sections/ServicesPreview"
-import ProcessTimeline from "../sections/ProcessTimeline"
-import StatsCounter from "../sections/StatsCounter"
-import TestimonialSlider from "../sections/TestimonialSlider"
-import CtaSection from "../sections/CtaSection"
-
 const Hero3D = React.lazy(() => import("../sections/Hero3D"))
+const ServicesPreview = React.lazy(() => import("../sections/ServicesPreview"))
+const ProcessTimeline = React.lazy(() => import("../sections/ProcessTimeline"))
+const StatsCounter = React.lazy(() => import("../sections/StatsCounter"))
+const TestimonialSlider = React.lazy(() => import("../sections/TestimonialSlider"))
+const CtaSection = React.lazy(() => import("../sections/CtaSection"))
+
 
 export default function Home() {
     return (
@@ -63,15 +63,25 @@ export default function Home() {
                 </div>
             </section>
 
-            <ServicesPreview />
+            <Suspense fallback={<div className="h-96" />}>
+                <ServicesPreview />
+            </Suspense>
 
-            <ProcessTimeline />
+            <Suspense fallback={<div className="h-96" />}>
+                <ProcessTimeline />
+            </Suspense>
 
-            <StatsCounter />
+            <Suspense fallback={<div className="h-48" />}>
+                <StatsCounter />
+            </Suspense>
 
-            <TestimonialSlider />
+            <Suspense fallback={<div className="h-96" />}>
+                <TestimonialSlider />
+            </Suspense>
 
-            <CtaSection />
+            <Suspense fallback={<div className="h-96" />}>
+                <CtaSection />
+            </Suspense>
         </motion.main>
     )
 }

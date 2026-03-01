@@ -103,7 +103,7 @@ export default function About() {
                             whileHover={{ scale: 1.05 }}
                             className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] bg-secondary"
                         >
-                            <img src={member.image} alt={member.name} className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <img src={member.image} alt={member.name} loading="lazy" className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
                                 <h4 className="font-bold text-white text-xl">{member.name}</h4>
                                 <p className="text-primary text-sm">{member.role}</p>

@@ -78,7 +78,12 @@ export default function Contact() {
                         transition={{ delay: 0.6 }}
                         className="w-full h-64 rounded-[2.5rem] bg-secondary/50 border border-white/5 overflow-hidden relative group"
                     >
-                        <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=Palo+Alto,CA&zoom=13&size=600x300&maptype=roadmap&style=feature:all|element:all|saturation:-100|lightness:0&key=YOUR_API_KEY')] bg-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-50" />
+                        <img
+                            src="https://maps.googleapis.com/maps/api/staticmap?center=Palo+Alto,CA&zoom=13&size=600x300&maptype=roadmap&style=feature:all|element:all|saturation:-100|lightness:0&key=YOUR_API_KEY"
+                            alt="Map"
+                            loading="lazy"
+                            className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-50"
+                        />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="glass px-6 py-3 rounded-full text-sm font-bold shadow-2xl">Palo Alto HQ</div>
                         </div>
