@@ -32,7 +32,7 @@ function AnimatedShape() {
             </mesh>
 
             {/* Inner Glowing Core */}
-            <Sphere args={[1.2, 64, 64]}>
+            <Sphere args={[1.2, 32, 32]}>
                 <MeshDistortMaterial
                     color="#4B999B"
                     emissive="#0F172A"

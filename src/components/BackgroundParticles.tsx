@@ -24,7 +24,7 @@ export default function BackgroundParticles() {
             />
 
             {/* Floating Particles */}
-            {[...Array(20)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
                 <motion.div
                     key={i}
                     initial={{
@@ -37,10 +37,10 @@ export default function BackgroundParticles() {
                         opacity: [null, 0]
                     }}
                     transition={{
-                        duration: Math.random() * 10 + 10,
+                        duration: Math.random() * 10 + 15,
                         repeat: Infinity,
                         ease: "linear",
-                        delay: Math.random() * 20
+                        delay: Math.random() * 10
                     }}
                     className="absolute w-1 h-1 bg-white/20 rounded-full"
                 />
